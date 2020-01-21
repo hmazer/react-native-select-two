@@ -124,6 +124,7 @@ class Select2 extends Component {
     }
     closeModal = () => this.setState({ show: false });
     showModal = () => this.setState({ show: true });
+    focusSearchBox = () => this.state.show && this.searchBox.focus()
 
     render() {
         let {
@@ -160,6 +161,7 @@ class Select2 extends Component {
                                 ? <TextInput
                                     underlineColorAndroid='transparent'
                                     returnKeyType='done'
+                                    ref={searchBox => this.searchBox = searchBox}
                                     style={[styles.inputKeyword, this.defaultFont]}
                                     placeholder={searchPlaceHolderText}
                                     selectionColor={colorTheme}
